@@ -1,0 +1,23 @@
+{
+  "name": "region-bucket",
+  "version": "1.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Jeremy Wells",
+    "email": "jemmyw@gmail.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1.4",
+    "bluebird": "^2.9.13",
+    "debug": "^2.1.2",
+    "extend": "^2.0.0"
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "region-bucket@1.0.1",
+  "_shasum": "e2dddbcc5549f682efd77ed891534e990a3f6326",
+  "_from": "region-bucket@1.0.1"
+}
