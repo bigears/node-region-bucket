@@ -3,21 +3,43 @@
   "version": "1.0.2",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run lint && mocha",
+    "lint": "eslint ."
   },
-  "author": {
-    "name": "Jeremy Wells",
-    "email": "jemmyw@gmail.com"
-  },
+  "author": "Jeremy Wells <jemmyw@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.1.4",
     "bluebird": "^2.9.13",
     "debug": "^2.1.2",
     "extend": "^2.0.0"
   },
-  "readme": "ERROR: No README data found!",
-  "_id": "region-bucket@1.0.1",
+  "peerDependencies": {
+    "aws-sdk": ">2.0.0"
+  },
   "_shasum": "e2dddbcc5549f682efd77ed891534e990a3f6326",
-  "_from": "region-bucket@1.0.1"
+  "_from": "region-bucket@1.0.1",
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "mocha": "^2.3.4",
+    "rewire": "^2.5.1",
+    "sinon": "^1.17.2",
+    "unexpected": "^10.5.0",
+    "unexpected-sinon": "^9.0.4"
+  },
+  "description": "A simple wrapper around AWS.S3 for creating buckets",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigears/node-region-bucket.git"
+  },
+  "keywords": [
+    "AWS",
+    "S3"
+  ],
+  "bugs": {
+    "url": "https://github.com/bigears/node-region-bucket/issues"
+  },
+  "homepage": "https://github.com/bigears/node-region-bucket#readme"
 }

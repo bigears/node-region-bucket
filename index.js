@@ -1,17 +1,14 @@
-var AWS     = require('aws-sdk')
-  , Promise = require('bluebird')
-  , extend  = require('extend')
-  , debug   = require('debug')('region-bucket')
-  ;
+var AWS     = require('aws-sdk');
+var Promise = require('bluebird');
+var extend  = require('extend');
+var debug   = require('debug')('region-bucket');
 
-function errHandler(err)
-{
-  console.error(err);
+function errHandler(err) {
+  debug(err);
   return Promise.reject(err);
 }
 
-function createS3(region, bucket)
-{
+function createS3(region, bucket) {
   return Promise.promisifyAll(
     new AWS.S3({
       region: region,
@@ -20,11 +17,11 @@ function createS3(region, bucket)
   );
 }
 
-module.exports = function(region, bucket, params)
-{
-  function createHandler(err)
-  {
-    console.log(err);
+module.exports = function(region, bucket, params) {
+  if(!params) { params = {}; }
+
+  function createHandler(err) {
+    debug(err);
 
     var createParams = {
       CreateBucketConfiguration: {
@@ -44,8 +41,7 @@ module.exports = function(region, bucket, params)
 
   var s3 = createS3('us-east-1', bucket);
 
-  var promise = s3.getBucketLocationAsync().tap(debug).then(function(response)
-  {
+  var promise = s3.getBucketLocationAsync().then(function(response) {
     return createS3(response.LocationConstraint, bucket);
   });
 
