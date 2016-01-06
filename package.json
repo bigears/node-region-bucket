@@ -9,9 +9,9 @@
   "author": "Jeremy Wells <jemmyw@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "bluebird": "^2.9.13",
+    "bluebird": "^3.1.1",
     "debug": "^2.1.2",
-    "extend": "^2.0.0"
+    "extend": "^3.0.0"
   },
   "peerDependencies": {
     "aws-sdk": ">2.0.0"
